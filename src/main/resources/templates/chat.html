@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>AI Chat</title>
+</head>
+<body>
+<h1>AI Chat</h1>
+
+<form action="/chat" method="post">
+    <textarea name="message" rows="4" cols="60" placeholder="Ask something..." required th:text="${question}"></textarea><br/>
+    <button type="submit">Send</button>
+</form>
+
+<p th:if="${error}" style="color:red;" th:text="${error}"></p>
+
+<div th:if="${answer}">
+    <h3>Answer</h3>
+    <p th:text="${answer}" style="white-space: pre-wrap;"></p>
+</div>
+</body>
+</html>
